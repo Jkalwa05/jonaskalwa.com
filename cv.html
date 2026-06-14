@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV - Jonas Kalwa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #F7F5F0;
+      --border: #E2DED5;
+      --text:   #1B1917;
+      --muted:  #7A7870;
+      --subtle: #B2AFA7;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ── Nav ── */
+    nav {
+      padding: 0 2.5rem;
+      height: 64px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(247,245,240,.95);
+      position: sticky; top: 0; z-index: 50;
+    }
+
+    .back {
+      font-size: .78rem; color: var(--muted); text-decoration: none;
+      display: flex; align-items: center; gap: .4rem;
+      transition: color .2s;
+    }
+    .back:hover { color: var(--text); }
+
+    .nav-name {
+      font-size: .78rem; font-weight: 500; color: var(--subtle);
+      text-align: right;
+    }
+
+    /* ── Language switcher ── */
+    .lang-switch {
+      display: flex; align-items: center; gap: 0;
+      justify-content: center;
+    }
+    .lang-btn {
+      background: none; border: none; cursor: pointer;
+      font-family: inherit; font-size: .78rem; font-weight: 500;
+      letter-spacing: .05em; color: var(--subtle);
+      padding: .25rem .3rem;
+      transition: color .2s;
+      position: relative; z-index: 0;
+    }
+    .lang-btn:hover { color: var(--text); }
+    .lang-btn.active { color: var(--text); }
+    .lang-sep {
+      position: relative; z-index: 1;
+      background: rgba(247,245,240,.95);
+      font-size: .85rem; color: var(--border);
+      padding: 0 2px; margin: 0 -5px;
+      user-select: none; line-height: 1;
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2.5rem 6rem;
+    }
+
+    /* ── Header ── */
+    .cv-header {
+      margin-bottom: 3.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .cv-name {
+      font-size: 2rem; font-weight: 600;
+      letter-spacing: -.025em; line-height: 1.1;
+      margin-bottom: .4rem;
+    }
+    .cv-title {
+      font-size: .88rem; color: var(--muted); margin-bottom: 1.1rem;
+    }
+    .cv-contact {
+      display: flex; flex-direction: column; gap: .2rem;
+    }
+    .cv-contact a {
+      font-size: .8rem; color: var(--muted); text-decoration: none;
+      transition: color .2s;
+    }
+    .cv-contact a:hover { color: var(--text); }
+    .cv-location {
+      font-size: .8rem; color: var(--subtle); margin-top: 1rem;
+    }
+
+    /* ── Section ── */
+    .cv-section { margin-bottom: 3rem; }
+    .cv-section-title {
+      font-size: .62rem; font-weight: 500; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--subtle);
+      margin-bottom: 1.25rem; padding-bottom: .6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── Entry ── */
+    .entry {
+      display: grid; grid-template-columns: 150px 1fr;
+      gap: 1.5rem; padding: 1.1rem 0;
+    }
+    .entry:not(:last-child) { border-bottom: 1px solid var(--border); }
+    .entry-date { font-size: .72rem; color: var(--subtle); padding-top: .15rem; line-height: 1.5; }
+    .entry-title { font-size: .93rem; font-weight: 500; color: var(--text); margin-bottom: .15rem; }
+    .entry-sub   { font-size: .82rem; color: var(--muted); margin-bottom: .4rem; }
+    .entry-desc  { font-size: .82rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── Skills ── */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 3rem; }
+    .skill-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: .55rem 0; border-bottom: 1px solid var(--border); font-size: .82rem;
+    }
+    .skill-name  { color: var(--text); }
+    .skill-level { color: var(--subtle); font-size: .75rem; }
+
+    /* ── Mobile ── */
+    @media (max-width: 580px) {
+      nav { padding: 0 1.5rem; }
+      main { padding: 2.5rem 1.5rem 4rem; }
+      .entry { grid-template-columns: 1fr; gap: .25rem; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .nav-name { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="portfolio.html" class="back" data-i18n="back">← Back</a>
+  <div class="lang-switch">
+    <button class="lang-btn" data-lang="en">EN</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" data-lang="de">DE</button>
+  </div>
+  <span class="nav-name">Jonas Kalwa</span>
+</nav>
+
+<main>
+
+  <div class="cv-header">
+    <div class="cv-name">Jonas Kalwa</div>
+    <div class="cv-title" data-i18n="cvTitle"></div>
+    <div class="cv-contact">
+      <a href="mailto:kalwajonas@gmail.com">kalwajonas@gmail.com</a>
+      <a href="https://www.linkedin.com/in/jonas-kalwa/" target="_blank" rel="noopener">linkedin.com/in/jonas-kalwa</a>
+    </div>
+    <div class="cv-location" data-i18n="cvLocation"></div>
+  </div>
+
+  <!-- Experience -->
+  <div class="cv-section">
+    <div class="cv-section-title" data-i18n="secExp"></div>
+
+    <div class="entry">
+      <div class="entry-date" data-i18n="d1"></div>
+      <div>
+        <div class="entry-title" data-i18n="t1"></div>
+        <div class="entry-sub"  data-i18n="s1"></div>
+        <div class="entry-desc" data-i18n="desc1"></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date" data-i18n="d2"></div>
+      <div>
+        <div class="entry-title" data-i18n="t2"></div>
+        <div class="entry-sub"  data-i18n="s2"></div>
+        <div class="entry-desc" data-i18n="desc2"></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date" data-i18n="d3"></div>
+      <div>
+        <div class="entry-title" data-i18n="t3"></div>
+        <div class="entry-sub"  data-i18n="s3"></div>
+        <div class="entry-desc" data-i18n="desc3"></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date" data-i18n="d4"></div>
+      <div>
+        <div class="entry-title" data-i18n="t4"></div>
+        <div class="entry-sub"  data-i18n="s4"></div>
+        <div class="entry-desc" data-i18n="desc4"></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date" data-i18n="d5"></div>
+      <div>
+        <div class="entry-title" data-i18n="t5"></div>
+        <div class="entry-sub"  data-i18n="s5"></div>
+        <div class="entry-desc" data-i18n="desc5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="cv-section">
+    <div class="cv-section-title" data-i18n="secEdu"></div>
+
+    <div class="entry">
+      <div class="entry-date">Okt. 2025 - 2028</div>
+      <div>
+        <div class="entry-title" data-i18n="edu1t"></div>
+        <div class="entry-sub">Universität Osnabrück</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">2021 - 2023</div>
+      <div>
+        <div class="entry-title">Fachoberschule Wirtschaft</div>
+        <div class="entry-sub">Handelslehranstalten Lohne (HLA)</div>
+        <div class="entry-desc" data-i18n="edu2d"></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">2015 - 2020</div>
+      <div>
+        <div class="entry-title">Gymnasium</div>
+        <div class="entry-sub">Antonianum Vechta</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hackathons -->
+  <div class="cv-section">
+    <div class="cv-section-title" data-i18n="secHack"></div>
+
+    <div class="entry">
+      <div class="entry-date" data-i18n="hw1"></div>
+      <div>
+        <div class="entry-title" data-i18n="ht1"></div>
+        <div class="entry-desc" data-i18n="hd1"></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">Berlin 2026</div>
+      <div>
+        <div class="entry-title" data-i18n="ht2"></div>
+        <div class="entry-desc" data-i18n="hd2"></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">Hamburg 2026</div>
+      <div>
+        <div class="entry-title" data-i18n="ht3"></div>
+        <div class="entry-desc" data-i18n="hd3"></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">Vechta 2026</div>
+      <div>
+        <div class="entry-title" data-i18n="ht4"></div>
+        <div class="entry-desc" data-i18n="hd4"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="cv-section">
+    <div class="cv-section-title" data-i18n="secSkills"></div>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <span class="skill-name" data-i18n="sk1n"></span>
+        <span class="skill-level" data-i18n="sk1l"></span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name" data-i18n="sk2n"></span>
+        <span class="skill-level" data-i18n="sk2l"></span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name" data-i18n="sk3n"></span>
+        <span class="skill-level" data-i18n="sk3l"></span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name" data-i18n="sk4n"></span>
+        <span class="skill-level" data-i18n="sk4l"></span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  const t = {
+    en: {
+      back:       '← Back',
+      cvTitle:    'AI Operations · Builder · B.Sc. Economics student',
+      cvLocation: 'Vechta, Lower Saxony · born 25 Aug 2005',
+      secExp:     'Experience',
+      secEdu:     'Education',
+      secHack:    'Hackathons',
+      secSkills:  'Skills & Languages',
+
+      d1: 'Apr 2026 - present', t1: 'Founder',                              s1: 'Stealth AI Startup · Self-employed',
+      desc1: 'Building an AI-driven B2B SaaS solution.',
+
+      d2: 'Oct 2025 - present', t2: 'Working Student - AI Operations & Marketing', s2: 'Pöppelmann GmbH & Co. KG',
+      desc2: 'Developing and rolling out AI and automation solutions in marketing. Leading AI adoption as an internal power user.',
+
+      d3: 'Jun 2025 - Oct 2025', t3: 'Marketing Assistant', s3: 'Pöppelmann GmbH & Co. KG',
+      desc3: 'Operational marketing support and early AI tooling projects.',
+
+      d4: 'Aug 2023 - Jun 2025', t4: 'Apprenticeship - Industriekaufmann', s4: 'Pöppelmann GmbH & Co. KG',
+      desc4: 'Shortened to 2 years. Grade: 2.2.',
+
+      d5: 'Aug 2021 - Jul 2022', t5: 'Internship - Insurance', s5: 'AOK Niedersachsen, Lohne',
+      desc5: 'One-year internship as Versicherungsfachangestellter.',
+
+      edu1t: 'B.Sc. Economics',
+      edu2d: 'Fachhochschulreife. Grade: 3.0.',
+
+      hw1: 'Munich 2026',
+      ht1: '2D sketch to 3D CAD',       hd1: '{Tech: Europe}. Automatically generating manufacturable CAD models from 2D technical drawings.',
+      ht2: 'AI Search Visibility',       hd2: 'Big Berlin Hack by {Tech: Europe}. A tool that tracks brand visibility inside AI search and surfaces revenue gaps.',
+      ht3: '3D scanning tool',           hd3: 'Cheftreff AI Hackathon. Turns on-site footage into an explorable 3D model.',
+      ht4: 'Campaign orchestration',     hd4: 'Hansaline Hackathon, representing Pöppelmann. A 5-phase campaign structure based on the customer awareness journey.',
+
+      sk1n: 'German',                    sk1l: 'Native',
+      sk2n: 'AI tooling & automation',   sk2l: 'Advanced',
+      sk3n: 'English',                   sk3l: 'Fluent',
+      sk4n: 'Marketing operations',      sk4l: 'Experienced',
+    },
+    de: {
+      back:       '← Zurück',
+      cvTitle:    'KI-Operations · Builder · B.Sc. Wirtschaftswissenschaften',
+      cvLocation: 'Vechta, Niedersachsen · geboren 25. August 2005',
+      secExp:     'Berufserfahrung',
+      secEdu:     'Ausbildung',
+      secHack:    'Hackathons',
+      secSkills:  'Kenntnisse & Sprachen',
+
+      d1: 'Apr. 2026 - heute',   t1: 'Gründer',                                    s1: 'Stealth-KI-Startup · Selbstständig',
+      desc1: 'Aufbau einer KI-gestützten B2B-SaaS-Lösung.',
+
+      d2: 'Okt. 2025 - heute',   t2: 'Werkstudent - KI-Operations & Marketing',    s2: 'Pöppelmann GmbH & Co. KG',
+      desc2: 'Entwicklung und Einführung von KI- und Automatisierungslösungen im Marketing. Vorantreiben der KI-Nutzung als interner Power-User.',
+
+      d3: 'Jun. 2025 - Okt. 2025', t3: 'Aushilfe Marketing',                      s3: 'Pöppelmann GmbH & Co. KG',
+      desc3: 'Operative Marketingunterstützung und erste KI-Tooling-Projekte.',
+
+      d4: 'Aug. 2023 - Jun. 2025', t4: 'Ausbildung - Industriekaufmann',           s4: 'Pöppelmann GmbH & Co. KG',
+      desc4: 'Verkürzt auf 2 Jahre. Note: 2,2.',
+
+      d5: 'Aug. 2021 - Jul. 2022', t5: 'Praktikum - Versicherung',                 s5: 'AOK Niedersachsen, Lohne',
+      desc5: 'Einjähriges Praktikum als Versicherungsfachangestellter.',
+
+      edu1t: 'B.Sc. Wirtschaftswissenschaften',
+      edu2d: 'Fachhochschulreife. Note: 3,0.',
+
+      hw1: 'München 2026',
+      ht1: '2D-Skizze zu 3D-CAD',            hd1: '{Tech: Europe}. Automatische Generierung fertiger CAD-Modelle aus technischen 2D-Zeichnungen.',
+      ht2: 'KI-Suchsichtbarkeit',             hd2: 'Big Berlin Hack by {Tech: Europe}. Ein Tool, das die Markensichtbarkeit in der KI-Suche verfolgt und Umsatzlücken aufdeckt.',
+      ht3: '3D-Scanning-Tool',                hd3: 'Cheftreff AI Hackathon. Wandelt Filmmaterial vor Ort in ein interaktives 3D-Modell um.',
+      ht4: 'Kampagnen-Orchestrierung',        hd4: 'Hansaline Hackathon, für Pöppelmann. Eine 5-Phasen-Kampagnenstruktur basierend auf der Customer-Awareness-Journey.',
+
+      sk1n: 'Deutsch',                        sk1l: 'Muttersprache',
+      sk2n: 'KI-Tools & Automatisierung',     sk2l: 'Fortgeschritten',
+      sk3n: 'Englisch',                       sk3l: 'Fließend',
+      sk4n: 'Marketing-Operations',           sk4l: 'Erfahren',
+    }
+  };
+
+  function applyLang(lang) {
+    const tr = t[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.getAttribute('data-i18n');
+      if (tr[k] !== undefined) el.innerHTML = tr[k];
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    document.documentElement.lang = lang;
+    localStorage.setItem('lang', lang);
+  }
+
+  const saved = localStorage.getItem('lang') || 'en';
+  applyLang(saved);
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+</script>
+
+</body>
+</html>
