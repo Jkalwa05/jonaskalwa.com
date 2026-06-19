@@ -24,6 +24,29 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 15px;
       line-height: 1.7;
+      cursor: none;
+    }
+
+    /* ── Cursor ── */
+    #cur {
+      position: fixed; width: 5px; height: 5px;
+      background: var(--text); border-radius: 50%;
+      pointer-events: none; z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
+    #cur-ring {
+      position: fixed; width: 28px; height: 28px;
+      border: 1.5px solid rgba(28,25,23,.15); border-radius: 50%;
+      pointer-events: none; z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: width .3s cubic-bezier(.23,1,.32,1),
+                  height .3s cubic-bezier(.23,1,.32,1),
+                  border-color .3s;
+    }
+    body:has(a:hover) #cur-ring,
+    body:has(button:hover) #cur-ring {
+      width: 44px; height: 44px;
+      border-color: rgba(37,88,216,.35);
     }
 
     /* ── Nav ── */
@@ -56,7 +79,7 @@
       justify-content: center;
     }
     .lang-btn {
-      background: none; border: none; cursor: pointer;
+      background: none; border: none; cursor: none;
       font-family: inherit; font-size: .78rem; font-weight: 500;
       letter-spacing: .05em; color: var(--subtle);
       padding: .25rem .3rem;
@@ -127,25 +150,38 @@
     .entry-desc  { font-size: .82rem; color: var(--muted); line-height: 1.65; }
 
     /* ── Skills ── */
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 3rem; }
+    .skills-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; }
+    .skills-col-title {
+      font-size: .62rem; font-weight: 500; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--subtle);
+      margin-bottom: .75rem; padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+    }
     .skill-row {
       display: flex; justify-content: space-between; align-items: baseline;
       padding: .55rem 0; border-bottom: 1px solid var(--border); font-size: .82rem;
     }
     .skill-name  { color: var(--text); }
     .skill-level { color: var(--subtle); font-size: .75rem; }
+    .hobby-row {
+      padding: .55rem 0; border-bottom: 1px solid var(--border);
+      font-size: .82rem; color: var(--text);
+    }
 
     /* ── Mobile ── */
     @media (max-width: 580px) {
       nav { padding: 0 1.5rem; }
       main { padding: 2.5rem 1.5rem 4rem; }
       .entry { grid-template-columns: 1fr; gap: .25rem; }
-      .skills-grid { grid-template-columns: 1fr; }
+      .skills-cols { grid-template-columns: 1fr; gap: 2rem 0; }
       .nav-name { display: none; }
     }
   </style>
 </head>
 <body>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
 
 <nav>
   <a href="portfolio.html" class="back" data-i18n="back">← Back</a>
@@ -286,25 +322,27 @@
     </div>
   </div>
 
-  <!-- Skills -->
+  <!-- Skills & Hobbies -->
   <div class="cv-section">
     <div class="cv-section-title" data-i18n="secSkills"></div>
-    <div class="skills-grid">
-      <div class="skill-row">
-        <span class="skill-name" data-i18n="sk1n"></span>
-        <span class="skill-level" data-i18n="sk1l"></span>
+    <div class="skills-cols">
+      <div>
+        <div class="skills-col-title" data-i18n="colLang"></div>
+        <div class="skill-row">
+          <span class="skill-name" data-i18n="sk1n"></span>
+          <span class="skill-level" data-i18n="sk1l"></span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name" data-i18n="sk3n"></span>
+          <span class="skill-level" data-i18n="sk3l"></span>
+        </div>
       </div>
-      <div class="skill-row">
-        <span class="skill-name" data-i18n="sk2n"></span>
-        <span class="skill-level" data-i18n="sk2l"></span>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name" data-i18n="sk3n"></span>
-        <span class="skill-level" data-i18n="sk3l"></span>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name" data-i18n="sk4n"></span>
-        <span class="skill-level" data-i18n="sk4l"></span>
+      <div>
+        <div class="skills-col-title" data-i18n="colHobbies"></div>
+        <div class="hobby-row" data-i18n="hb1"></div>
+        <div class="hobby-row" data-i18n="hb2"></div>
+        <div class="hobby-row" data-i18n="hb3"></div>
+        <div class="hobby-row" data-i18n="hb4"></div>
       </div>
     </div>
   </div>
@@ -346,10 +384,11 @@
       ht3: '3D scanning tool',           hd3: 'Cheftreff AI Hackathon. Turns on-site footage into an explorable 3D model.',
       ht4: 'Campaign orchestration',     hd4: 'Hansaline Hackathon, representing Pöppelmann. A 5-phase campaign structure based on the customer awareness journey.',
 
-      sk1n: 'German',                    sk1l: 'Native',
-      sk2n: 'AI tooling & automation',   sk2l: 'Advanced',
-      sk3n: 'English',                   sk3l: 'Fluent',
-      sk4n: 'Marketing operations',      sk4l: 'Experienced',
+      colLang: 'Skills & Languages',
+      colHobbies: 'Hobbies',
+      sk1n: 'German',  sk1l: 'Native',
+      sk3n: 'English', sk3l: 'Fluent',
+      hb1: 'Football', hb2: 'Basketball', hb3: 'Gym', hb4: 'Drums',
     },
     de: {
       back:       '← Zurück',
@@ -384,10 +423,11 @@
       ht3: '3D-Scanning-Tool',                hd3: 'Cheftreff AI Hackathon. Wandelt Filmmaterial vor Ort in ein interaktives 3D-Modell um.',
       ht4: 'Kampagnen-Orchestrierung',        hd4: 'Hansaline Hackathon, für Pöppelmann. Eine 5-Phasen-Kampagnenstruktur basierend auf der Customer-Awareness-Journey.',
 
-      sk1n: 'Deutsch',                        sk1l: 'Muttersprache',
-      sk2n: 'KI-Tools & Automatisierung',     sk2l: 'Fortgeschritten',
-      sk3n: 'Englisch',                       sk3l: 'Fließend',
-      sk4n: 'Marketing-Operations',           sk4l: 'Erfahren',
+      colLang: 'Kenntnisse & Sprachen',
+      colHobbies: 'Hobbys',
+      sk1n: 'Deutsch',  sk1l: 'Muttersprache',
+      sk3n: 'Englisch', sk3l: 'Fließend',
+      hb1: 'Fußball', hb2: 'Basketball', hb3: 'Gym', hb4: 'Schlagzeug',
     }
   };
 
@@ -410,6 +450,22 @@
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => applyLang(btn.dataset.lang));
   });
+
+  // ── Cursor ──
+  const cur  = document.getElementById('cur');
+  const ring = document.getElementById('cur-ring');
+  let rx = 0, ry = 0, mx = 200, my = 200;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cur.style.left = mx + 'px'; cur.style.top = my + 'px';
+  });
+
+  (function tick() {
+    rx += (mx - rx) * .1; ry += (my - ry) * .1;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(tick);
+  })();
 </script>
 
 </body>
