@@ -260,7 +260,7 @@
     <div class="cv-section-title" data-i18n="secEdu"></div>
 
     <div class="entry">
-      <div class="entry-date">Okt. 2025 - 2028</div>
+      <div class="entry-date" data-i18n="edu1date"></div>
       <div>
         <div class="entry-title" data-i18n="edu1t"></div>
         <div class="entry-sub">Universität Osnabrück</div>
@@ -299,6 +299,34 @@
       <div>
         <div class="entry-title">Gymnasium</div>
         <div class="entry-sub">Antonianum Vechta</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certifications -->
+  <div class="cv-section">
+    <div class="cv-section-title" data-i18n="secCert"></div>
+
+    <div class="entry">
+      <div class="entry-date" data-i18n="cd1"></div>
+      <div>
+        <div class="entry-title" data-i18n="ct1"></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date" data-i18n="cd2"></div>
+      <div>
+        <div class="entry-title" data-i18n="ct2"></div>
+        <div class="entry-sub" data-i18n="cs2"></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date" data-i18n="cd3"></div>
+      <div>
+        <div class="entry-title" data-i18n="ct3"></div>
+        <div class="entry-sub" data-i18n="cs3"></div>
       </div>
     </div>
   </div>
@@ -343,7 +371,18 @@
   <!-- Skills & Hobbies -->
   <div class="cv-section">
     <div class="cv-section-title" data-i18n="secSkills"></div>
-    <div class="skills-cols">
+
+    <div class="entry">
+      <div class="entry-date" data-i18n="foc1n"></div>
+      <div><div class="entry-desc" data-i18n="foc1v"></div></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date" data-i18n="foc2n"></div>
+      <div><div class="entry-desc" data-i18n="foc2v"></div></div>
+    </div>
+
+    <div class="skills-cols" style="margin-top:2rem;">
       <div>
         <div class="skills-col-title" data-i18n="colLang"></div>
         <div class="skill-row">
@@ -353,6 +392,10 @@
         <div class="skill-row">
           <span class="skill-name" data-i18n="sk3n"></span>
           <span class="skill-level" data-i18n="sk3l"></span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name" data-i18n="sk4n"></span>
+          <span class="skill-level" data-i18n="sk4l"></span>
         </div>
       </div>
       <div>
@@ -371,33 +414,39 @@
   const t = {
     en: {
       back:       '← Back',
-      cvTitle:    'AI Operations · Builder · B.Sc. Economics student',
+      cvTitle:    'AI platforms & architecture · Process automation',
       cvLocation: 'Osnabrück, Lower Saxony · born 25 Aug 2005',
       secExp:     'Experience',
       secEdu:     'Education',
+      secCert:    'Certifications',
       secHack:    'Hackathons',
       secSkills:  'Skills & Languages',
 
-      d1: 'Apr 2026 - present', t1: 'Founder',                              s1: 'Stealth AI Startup · Self-employed',
-      desc1: 'Building an AI-driven B2B SaaS solution.',
+      d1: 'Apr 2026 - present', t1: 'Developer',                             s1: 'Self-employed',
+      desc1: '• Developing AI-driven software',
 
-      d2: 'Oct 2025 - present', t2: 'Working Student - AI Operations & Marketing', s2: 'Pöppelmann GmbH & Co. KG',
-      desc2: 'Supporting the marketing team across a broad range of operational tasks — from SEO to business card design and beyond. In parallel, developing and rolling out AI and automation solutions and driving AI adoption as an internal power user.',
+      d2: 'Oct 2025 - present', t2: 'Working Student - Marketing & AI',       s2: 'Pöppelmann GmbH & Co. KG',
+      desc2: '• Designing and building internal AI and automation solutions<br>• Helping shape strategic AI goals<br>• Operational marketing: independent support',
 
       d3: 'Jun 2025 - Oct 2025', t3: 'Marketing Assistant', s3: 'Pöppelmann GmbH & Co. KG',
-      desc3: 'Operational marketing support and early AI tooling projects.',
+      desc3: '• Directly continued after finishing the apprenticeship<br>• Operational marketing: independent support<br>• AI power user: developing and rolling out AI and other automation solutions',
 
       d4: 'Aug 2023 - Jun 2025', t4: 'Apprenticeship - Industriekaufmann', s4: 'Pöppelmann GmbH & Co. KG',
-      desc4: 'Shortened to 2 years. Grade: 2.2.',
+      desc4: '• Shortened to 2 years<br>• Grade: 2.2',
 
       d5: 'Aug 2021 - Jul 2022', t5: 'Internship - Insurance', s5: 'AOK Niedersachsen, Lohne',
       desc5: 'One-year internship as Versicherungsfachangestellter.',
 
-      edu1t: 'B.Sc. Economics',
-      edu2d: 'Fachhochschulreife. Grade: 3.0.',
+      edu1date: 'since Oct 2025',
+      edu1t: 'B.Sc. Economics (Business Informatics from Oct 2026)',
+      edu2d: 'Fachhochschulreife.',
       edu3t: 'Apprenticeship - Industriekaufmann',
       edu4t: 'Oberschule',
       edu4d: 'Erweiterter Realschulabschluss.',
+
+      cd1: 'in progress', ct1: 'IBM certificates - AI Developer',
+      cd2: 'planned',     ct2: 'AI Campus of the IPAI',            cs2: 'As tester, then running it for the in-house AI core team',
+      cd3: 'planned',     ct3: 'AI Expert',                        cs3: 'Certificate programme by the DBU',
 
       hw1: 'Munich 2026',
       ht1: '2D sketch to 3D CAD',       hd1: '{Tech: Europe}. Automatically generating manufacturable CAD models from 2D technical drawings.',
@@ -405,41 +454,51 @@
       ht3: '3D scanning tool',           hd3: 'Cheftreff AI Hackathon. Turns on-site footage into an explorable 3D model.',
       ht4: 'Campaign orchestration',     hd4: 'Hansaline Hackathon, representing Pöppelmann. A 5-phase campaign structure based on the customer awareness journey.',
 
-      colLang: 'Skills & Languages',
+      foc1n: 'Focus', foc1v: 'Building applications that hold up in everyday use · automating processes with AI',
+      foc2n: 'Tech',  foc2v: 'Web and backend development, databases, cloud operation. I pick up whatever else a project needs.',
+
+      colLang: 'Languages',
       colHobbies: 'Hobbies',
       sk1n: 'German',  sk1l: 'Native',
       sk3n: 'English', sk3l: 'Fluent',
+      sk4n: 'Russian', sk4l: "Parents' language, beginner course",
       hb1: 'Football', hb2: 'Basketball', hb3: 'Gym', hb4: 'Drums',
     },
     de: {
       back:       '← Zurück',
-      cvTitle:    'KI-Operations · Builder · B.Sc. Wirtschaftswissenschaften',
+      cvTitle:    'KI-Plattform & Architektur · Prozessautomatisierung',
       cvLocation: 'Osnabrück, Niedersachsen · geboren 25. August 2005',
       secExp:     'Berufserfahrung',
       secEdu:     'Ausbildung',
+      secCert:    'Weiterbildung',
       secHack:    'Hackathons',
       secSkills:  'Kenntnisse & Sprachen',
 
-      d1: 'Apr. 2026 - heute',   t1: 'Gründer',                                    s1: 'Stealth-KI-Startup · Selbstständig',
-      desc1: 'Aufbau einer KI-gestützten B2B-SaaS-Lösung.',
+      d1: 'Apr. 2026 - heute',   t1: 'Entwickler',                                 s1: 'Selbstständig',
+      desc1: '• Entwicklung von KI-gestützter Software',
 
-      d2: 'Okt. 2025 - heute',   t2: 'Werkstudent - KI-Operations & Marketing',    s2: 'Pöppelmann GmbH & Co. KG',
-      desc2: 'Unterstützung des Marketingteams in einem breiten Spektrum operativer Aufgaben — von SEO bis hin zur Erstellung von Visitenkarten und vielem mehr. Parallel dazu Entwicklung und Einführung von KI- und Automatisierungslösungen sowie Vorantreiben der KI-Nutzung als interner Power-User.',
+      d2: 'Okt. 2025 - heute',   t2: 'Werkstudent Marketing & KI',                 s2: 'Pöppelmann GmbH & Co. KG',
+      desc2: '• Konzeption und Entwicklung interner KI- und Automatisierungslösungen<br>• Mitgestaltung strategischer KI-Ziele<br>• Operatives Marketing: Eigenverantwortliche Unterstützung',
 
       d3: 'Jun. 2025 - Okt. 2025', t3: 'Aushilfe Marketing',                      s3: 'Pöppelmann GmbH & Co. KG',
-      desc3: 'Operative Marketingunterstützung und erste KI-Tooling-Projekte.',
+      desc3: '• Direkte Weiterbeschäftigung nach Ausbildungsabschluss<br>• Operatives Marketing: Eigenverantwortliche Unterstützung<br>• KI-Power-User: Entwicklung und Einführung von KI- und weiteren Automatisierungslösungen',
 
       d4: 'Aug. 2023 - Jun. 2025', t4: 'Ausbildung - Industriekaufmann',           s4: 'Pöppelmann GmbH & Co. KG',
-      desc4: 'Verkürzt auf 2 Jahre. Note: 2,2.',
+      desc4: '• Verkürzung der Ausbildungszeit auf 2 Jahre<br>• Note: 2,2',
 
       d5: 'Aug. 2021 - Jul. 2022', t5: 'Praktikum - Versicherung',                 s5: 'AOK Niedersachsen, Lohne',
       desc5: 'Einjähriges Praktikum als Versicherungsfachangestellter.',
 
-      edu1t: 'B.Sc. Wirtschaftswissenschaften',
-      edu2d: 'Fachhochschulreife. Note: 3,0.',
+      edu1date: 'seit Okt. 2025',
+      edu1t: 'B.Sc. Wirtschaftswissenschaften (ab 10/2026 Wirtschaftsinformatik)',
+      edu2d: 'Fachhochschulreife.',
       edu3t: 'Ausbildung - Industriekaufmann',
       edu4t: 'Oberschule',
       edu4d: 'Erweiterter Realschulabschluss.',
+
+      cd1: 'laufend', ct1: 'IBM-Zertifikate zum AI-Developer',
+      cd2: 'geplant', ct2: 'KI-Campus des IPAI',               cs2: 'Als Tester, anschließend Durchführung für das KI-Kernteam',
+      cd3: 'geplant', ct3: 'AI Expert',                        cs3: 'Zertifikatsprogramm der DBU',
 
       hw1: 'München 2026',
       ht1: '2D-Skizze zu 3D-CAD',            hd1: '{Tech: Europe}. Automatische Generierung fertiger CAD-Modelle aus technischen 2D-Zeichnungen.',
@@ -447,10 +506,14 @@
       ht3: '3D-Scanning-Tool',                hd3: 'Cheftreff AI Hackathon. Wandelt Filmmaterial vor Ort in ein interaktives 3D-Modell um.',
       ht4: 'Kampagnen-Orchestrierung',        hd4: 'Hansaline Hackathon, für Pöppelmann. Eine 5-Phasen-Kampagnenstruktur basierend auf der Customer-Awareness-Journey.',
 
-      colLang: 'Kenntnisse & Sprachen',
+      foc1n: 'Schwerpunkte', foc1v: 'Anwendungen bauen, die im Alltag bestehen · Abläufe mit KI automatisieren',
+      foc2n: 'Technik',      foc2v: 'Web- und Backend-Entwicklung, Datenbanken, Cloud-Betrieb. Neues arbeite ich mir ein.',
+
+      colLang: 'Sprachen',
       colHobbies: 'Hobbys',
       sk1n: 'Deutsch',  sk1l: 'Muttersprache',
       sk3n: 'Englisch', sk3l: 'Fließend',
+      sk4n: 'Russisch', sk4l: 'Elternsprache, Anfängerkurs',
       hb1: 'Fußball', hb2: 'Basketball', hb3: 'Gym', hb4: 'Schlagzeug',
     }
   };
