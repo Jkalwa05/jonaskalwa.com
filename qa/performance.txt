@@ -1,6 +1,6 @@
 
 perf dist/index.html @ 1440px
-  PASS  host CPU load (before/after)               19/6 %         
+  PASS  host CPU load (before/after)               19/6 %
   PASS  total transfer                             572 KiB        html 6.6K  css 8.1K  js 9.5K  font 55.7K  img 485K  other 7K
   PASS  requests                                   20             15 by load
   PASS  images bytes                               485 KiB        7 files
@@ -9,24 +9,24 @@ perf dist/index.html @ 1440px
   PASS  CSS                                        8.1 KiB        3 files
   PASS  font families                              2              Switzer, Cabinet
   PASS  font files                                 3              55.7K
-  PASS  font bytes                                 55.7 KiB       
-  PASS  images without width+height                0              
-  PASS  below-fold images not lazy                 0              
+  PASS  font bytes                                 55.7 KiB
+  PASS  images without width+height                0
+  PASS  below-fold images not lazy                 0
   FAIL  oversized images (natural > 2.2x shown)    7              jonas-kalwa.webp 900px for 42; ak-website-desktop.webp 1440px for 565; ak-visitenkarte-design.webp 1205px for 318
-  PASS  WebGL live at load                         0              
-  PASS  WebGL live at bottom                       0              
+  PASS  WebGL live at load                         0
+  PASS  WebGL live at bottom                       0
   PASS  WebGL peak live                            0              0 contexts made in all
   PASS  long tasks                                 0              runs 3, 0..0, max 0ms
   PASS  blocking time                              0 ms           runs 3, 0..0 ms; at load 0ms
   PASS  FCP (CPU, relative)                        60 ms          runs 3, 40..60
   PASS  LCP (CPU, relative)                        60 ms          runs 3, 40..60, img
   PASS  layout shift                               0.000          runs 3, 0.000..0.000; at load 0.000
-  PASS  modules loaded, never mounted              0              
-  PASS  broken requests                            0              
+  PASS  modules loaded, never mounted              0
+  PASS  broken requests                            0
   PASS  page height                                8.4 screens    DOM 442 nodes
 
 perf dist/index.html @ 390px
-  PASS  host CPU load (before/after)               19/6 %         
+  PASS  host CPU load (before/after)               19/6 %
   PASS  total transfer                             571.6 KiB      html 6.6K  css 8.1K  js 9.5K  font 55.7K  img 485K  other 6.6K
   PASS  requests                                   19             14 by load
   PASS  images bytes                               485 KiB        7 files
@@ -35,20 +35,20 @@ perf dist/index.html @ 390px
   PASS  CSS                                        8.1 KiB        3 files
   PASS  font families                              2              Switzer, Cabinet
   PASS  font files                                 3              55.7K
-  PASS  font bytes                                 55.7 KiB       
-  PASS  images without width+height                0              
+  PASS  font bytes                                 55.7 KiB
+  PASS  images without width+height                0
   WARN  below-fold images not lazy                 1              jonas-kalwa.webp
   FAIL  oversized images (natural > 2.2x shown)    8              ak-website-desktop.webp 1440px for 310; ak-visitenkarte-design.webp 1205px for 148; ak-website-detail.webp 1440px for 306
-  PASS  WebGL live at load                         0              
-  PASS  WebGL live at bottom                       0              
+  PASS  WebGL live at load                         0
+  PASS  WebGL live at bottom                       0
   PASS  WebGL peak live                            0              0 contexts made in all
   PASS  long tasks                                 0              runs 3, 0..0, max 0ms
   PASS  blocking time                              0 ms           runs 3, 0..0 ms; at load 0ms
   PASS  FCP (CPU, relative)                        52 ms          runs 3, 48..52
   PASS  LCP (CPU, relative)                        52 ms          runs 3, 48..52, img
   PASS  layout shift                               0.000          runs 3, 0.000..0.000; at load 0.000
-  PASS  modules loaded, never mounted              0              
-  PASS  broken requests                            0              
+  PASS  modules loaded, never mounted              0
+  PASS  broken requests                            0
   PASS  page height                                9.4 screens    DOM 442 nodes
 
 SUMMARY dist/index.html: 2 FAIL, 1 WARN  -> FAIL
