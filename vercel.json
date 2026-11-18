@@ -6,8 +6,8 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
-    { "source": "/cv", "destination": "/#lebenslauf", "permanent": true },
-    { "source": "/cv.html", "destination": "/#lebenslauf", "permanent": true }
+    { "source": "/cv", "destination": "/lebenslauf/", "permanent": true },
+    { "source": "/cv.html", "destination": "/lebenslauf/", "permanent": true }
   ],
   "headers": [
     { "source": "/(.*)", "headers": [
