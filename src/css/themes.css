@@ -1,0 +1,8 @@
+/* Flächen: jeder Abschnitt trägt eine Farbwelt. Die Tokens --bg, --ink, --hair, --accent werden lokal überschrieben. */
+[class*="theme-"]{background:var(--bg);color:var(--ink)}
+.theme-light{--bg:#fff}
+.theme-wash{--bg:var(--ground-wash);--hair:rgba(16,18,20,.14);--hair-2:rgba(16,18,20,.26)}
+.theme-blue{--bg:var(--ground-blue);--ink:#fff;--ink-2:rgba(255,255,255,.9);--ink-3:rgba(255,255,255,.86);--hair:rgba(255,255,255,.26);--hair-2:rgba(255,255,255,.46);--accent:#fff;--accent-deep:#dfe7ff;--focus:#fff;--btn-hover:#e3eaff}
+.theme-night{--bg:var(--ground-night);--ink:#fff;--ink-2:rgba(255,255,255,.8);--ink-3:rgba(255,255,255,.72);--hair:rgba(255,255,255,.16);--hair-2:rgba(255,255,255,.3);--accent:var(--accent-night);--accent-deep:#b9cbff;--focus:#fff;--btn-hover:var(--accent-night)}
+.theme-blue ::selection,.theme-night ::selection{background:#fff;color:var(--bg)}
+.theme-blue .brand-symbol,.theme-night .brand-symbol{filter:brightness(0) invert(1)}

@@ -1,0 +1,23 @@
+{
+  "name": "kalwa-software",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Kalwa Software: Websites, individuelle Software und Automatisierungen von Jonas Kalwa.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build-tokens.mjs && node scripts/build-site.mjs && node scripts/check-static.mjs",
+    "test": "node --test --test-concurrency=1 scripts/tests/"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "axe-core": "4.10.2",
+    "esbuild": "0.28.2",
+    "playwright": "1.63.0"
+  },
+  "dependencies": {
+    "gsap": "3.13.0"
+  }
+}

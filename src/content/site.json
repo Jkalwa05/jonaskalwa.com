@@ -1,0 +1,84 @@
+{
+  "name": "Kalwa Software",
+  "tagline": "Websites, individuelle Software und Automatisierungen.",
+  "email": "kalwajonas@gmail.com",
+  "phone": "+49 162 9242844",
+  "address": {
+    "street": "Dinkelkamp 30",
+    "city": "49377 Vechta",
+    "country": "Deutschland"
+  },
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/jonas-kalwa/",
+    "github": "https://github.com/Jkalwa05",
+    "ak": "https://ak-rundum.com"
+  },
+  "nav": [
+    {
+      "href": "/#leistungen",
+      "label": "Leistungen"
+    },
+    {
+      "href": "/#praxis",
+      "label": "Projekte"
+    },
+    {
+      "href": "/#ueber-mich",
+      "label": "Über mich"
+    },
+    {
+      "href": "/lebenslauf/",
+      "label": "Lebenslauf"
+    }
+  ],
+  "assets": {
+    "akDesktop": {
+      "src": "/assets/ak-website-desktop.webp",
+      "width": 1440,
+      "height": 1000,
+      "alt": "Die von Jonas entwickelte Website des Handwerksbetriebs AK rund ums Haus mit Leistungen und direkter Kontaktmöglichkeit."
+    },
+    "akDetail": {
+      "src": "/assets/ak-website-detail.webp",
+      "width": 1440,
+      "height": 1000,
+      "alt": "Echter Website-Ausschnitt mit den Handwerksleistungen von AK rund ums Haus: Möbelaufbau, Türen und Bodenarbeiten."
+    },
+    "akMobile": {
+      "src": "/assets/ak-website-mobile.webp",
+      "width": 780,
+      "height": 1688,
+      "alt": "Die Website von AK rund ums Haus auf dem Smartphone: klare Leistungen und direkt erreichbare Kontaktbuttons."
+    },
+    "akCardPhoto": {
+      "src": "/assets/ak-visitenkarten-foto.webp",
+      "width": 1200,
+      "height": 1102,
+      "alt": "Foto der tatsächlich gedruckten Visitenkarten von AK rund ums Haus, gestapelt in ihrer Versandverpackung."
+    },
+    "akCardDesign": {
+      "src": "/assets/ak-visitenkarte-design.webp",
+      "width": 1205,
+      "height": 780,
+      "alt": "Detailansicht des anhand des Fotos nachgebauten Visitenkarten-Layouts."
+    },
+    "objelisSite": {
+      "src": "/assets/objelis-website.webp",
+      "width": 1440,
+      "height": 1000,
+      "alt": "Der aktuelle Entwicklungsstand der objelis-Website: ein vermessenes Smartphone als grünes Linienmodell auf schwarzem Hintergrund."
+    },
+    "portrait": {
+      "src": "/assets/jonas-kalwa.webp",
+      "width": 900,
+      "height": 871,
+      "alt": "Jonas Kalwa, Gründer und Entwickler von Kalwa Software."
+    },
+    "objelisModel": {
+      "src": "/assets/objelis-modell.webp",
+      "width": 1200,
+      "height": 1200,
+      "alt": "Drahtgittermodell eines Smartphones aus der Entwicklung von objelis."
+    }
+  }
+}

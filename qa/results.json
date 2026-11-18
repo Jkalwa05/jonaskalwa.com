@@ -1,0 +1,132 @@
+{
+  "origin": "http://127.0.0.1:4173",
+  "responsive": [
+    {
+      "width": 320,
+      "scroll": 320,
+      "broken": [],
+      "momentFailed": null,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "scroll": 390,
+      "broken": [],
+      "momentFailed": null,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "scroll": 768,
+      "broken": [],
+      "momentFailed": null,
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "scroll": 1024,
+      "broken": [],
+      "momentFailed": null,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "scroll": 1440,
+      "broken": [],
+      "momentFailed": null,
+      "passed": true
+    }
+  ],
+  "accessibility": [
+    {
+      "width": 390,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/impressum/",
+      "violations": []
+    },
+    {
+      "route": "/datenschutz/",
+      "violations": []
+    },
+    {
+      "route": "/404.html",
+      "violations": []
+    }
+  ],
+  "functional": [
+    {
+      "width": 390,
+      "check": "mail draft selects interest, retains input and avoids fake sent confirmation",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "check": "service disclosures, CV deep link, latest career content",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "check": "mobile menu, Escape and focus return",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "check": "mail draft selects interest, retains input and avoids fake sent confirmation",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "check": "service disclosures, CV deep link, latest career content",
+      "passed": true
+    }
+  ],
+  "fallback": [
+    {
+      "settings": {
+        "javaScriptEnabled": false
+      },
+      "passed": true
+    },
+    {
+      "settings": {
+        "reducedMotion": "reduce"
+      },
+      "passed": true
+    }
+  ],
+  "consoleErrors": [],
+  "metrics": [
+    {
+      "width": 320,
+      "cls": 0,
+      "lcp": 1536
+    },
+    {
+      "width": 390,
+      "cls": 0.0000017434533412980994,
+      "lcp": 84
+    },
+    {
+      "width": 768,
+      "cls": 0,
+      "lcp": 1512
+    },
+    {
+      "width": 1024,
+      "cls": 0.00017612695693969724,
+      "lcp": 1524
+    },
+    {
+      "width": 1440,
+      "cls": 0.00009295066550925926,
+      "lcp": 1520
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,18 @@
+/* Abschnitts-Würfel: flache, abgerundete Quadrate, mittig im rechten Seitenrand. Farben folgen dem Abschnitt darunter (data-on). */
+.cubes{display:none;position:fixed;z-index:40;top:50%;translate:0 -50%;right:calc((max(var(--edge),(100vw - 1296px) / 2) - var(--cube-active)) / 2)}
+@media (min-width:960px){.cubes{display:block}}
+.cubes ol{display:grid;gap:12px;justify-items:center}
+.cubes li{display:grid;place-items:center;width:var(--cube-active);height:var(--cube-active)}
+/* Farbe: blau auf hellen Flächen, weiß auf Blau und Nachtblau */
+.cube{--c-line:rgba(40,87,235,.62);--c-fill:#2857eb;--c-ground:#fff;--c-text:#101214;position:relative;display:block;width:var(--cube);height:var(--cube);border:1px solid var(--c-line);border-radius:var(--cube-radius);background:transparent;text-decoration:none;transition:width var(--dur-2) var(--ease),height var(--dur-2) var(--ease),background-color .12s linear,border-color .12s linear,outline-color .12s linear}
+.cube::after{content:"";position:absolute;inset:-9px}
+.cube[data-on="wash"]{--c-ground:var(--ground-wash)}
+.cube[data-on="blue"]{--c-line:rgba(255,255,255,.7);--c-fill:#fff;--c-ground:var(--ground-blue);--c-text:#fff}
+.cube[data-on="night"]{--c-line:rgba(255,255,255,.7);--c-fill:#fff;--c-ground:var(--ground-night);--c-text:#fff}
+.cube:hover{border-color:var(--c-fill)}
+.cube.is-passed{background:var(--c-fill);border-color:var(--c-fill)}
+.cube.is-active{width:var(--cube-active);height:var(--cube-active);background:var(--c-fill);border-color:var(--c-fill);outline:1px solid var(--c-fill);outline-offset:3px}
+.cube:focus-visible{outline:2px solid var(--c-fill);outline-offset:4px}
+.cube__label{position:absolute;right:calc(100% + 14px);top:50%;translate:0 -50%;padding:5px 10px;border:1px solid var(--c-line);border-radius:999px;background:var(--c-ground);color:var(--c-text);font:600 13px/1 var(--text);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity var(--dur-1) var(--ease)}
+.cube:hover .cube__label,.cube:focus-visible .cube__label,.cube.is-announced .cube__label{opacity:1}
+@media (prefers-reduced-motion:reduce){.cube,.cube__label{transition:none}}

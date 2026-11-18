@@ -1,0 +1,33 @@
+.praxis-head,.objelis-head{padding-top:0}
+.praxis-head h2,.objelis-head h2{margin-top:var(--s4)}
+.split__body h3{font-size:var(--fs-h3)}
+.facts{display:grid;gap:var(--s4);margin-block:var(--s2)}
+.facts>div{display:grid;gap:var(--s1);padding-top:var(--s3);border-top:1px solid var(--hair)}
+.facts dd{font-weight:500;color:var(--ink)}
+.facts .label{color:var(--ink-3)}
+/* Belege */
+.proof{margin:0}
+.proof__frame{border-radius:var(--radius);overflow:hidden;background:var(--bg)}
+.proof__frame img{width:100%;height:auto}
+.proof--stage{margin-top:var(--s9)}
+.proof__device{width:100%}
+.proof__device img{aspect-ratio:1440/800;object-fit:cover;object-position:top}
+.print-grid{display:grid;gap:var(--s7);margin-top:var(--s10);align-items:center}
+.print-copy{display:grid;gap:var(--s4);justify-items:start}
+.print-copy h3{font-size:var(--fs-h3)}
+.print-copy .muted{max-width:44ch}
+@media (min-width:960px){.print-grid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--s5)}.print-copy{grid-column:1 / span 5}.proof--photo{grid-column:7 / span 6}}
+.theme-night .proof__frame{border:1px solid var(--hair-2)}
+/* objelis: Text links, großes Drahtgittermodell rechts */
+.objelis-grid{display:grid;gap:var(--s8);align-items:center}
+.objelis-copy{display:grid;gap:var(--s5);justify-items:start}
+.objelis-copy h2{margin-top:var(--s1)}
+.objelis-copy .facts{width:100%;max-width:52ch}
+.objelis-visual{position:relative;margin:0;border-radius:var(--radius);overflow:hidden;background:#030508;border:1px solid var(--hair-2)}
+.objelis-visual img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+@media (min-width:960px){.objelis-grid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--s5)}.objelis-copy{grid-column:1 / span 5}.objelis-visual{grid-column:7 / span 6}}
+/* Maßwerte am Drahtgittermodell: schlichter Text neben den Linien des Bildes */
+.model-dim{position:absolute;font:500 clamp(12px,1.15vw,16px)/1 var(--text);color:rgba(255,255,255,.88);white-space:nowrap}
+.model-dim--h{left:70.5%;top:47%}
+.model-dim--w{left:46%;top:88%}
+.model-dim--d{left:67.5%;top:91.5%}

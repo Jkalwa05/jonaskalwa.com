@@ -1,0 +1,19 @@
+.wrap{width:100%;max-width:1440px;margin-inline:auto;padding-inline:var(--edge)}
+@media (min-width:1440px){.wrap{max-width:calc(1296px + 2 * var(--edge));}}
+.section{position:relative;padding-block:var(--sec)}
+.section--tight{padding-block:calc(var(--sec) * .6)}
+/* Haarlinie über den Abschnitten; wird mit JS von links gezeichnet */
+.hairline{display:block;height:1px;background:var(--hair);border:0;margin:0;transform-origin:left center}
+html.motion .hairline-draw:not([data-revealed]){transform:scaleX(0)}
+/* Zweispalter nach Objelis: Überschrift links, Text rechts */
+.split{display:grid;gap:var(--s6)}
+@media (min-width:960px){.split{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--s5);align-items:start}.split__head{grid-column:1 / span 6}.split__body{grid-column:7 / span 6}}
+.split__body{display:grid;gap:var(--s5);align-content:start}
+.prose-page{padding-block:calc(var(--sec) * .7);max-width:880px}
+.prose-page h1{font-size:var(--fs-h1);margin:var(--s4) 0 var(--s7)}
+.prose-page h2{font-size:var(--fs-h3);margin:var(--s7) 0 var(--s3)}
+.prose-page p,.prose-page address{margin-block:0 var(--s4);color:var(--ink-2);max-width:68ch}
+.prose-page a{color:var(--ink)}
+.not-found{padding-block:var(--sec);display:grid;gap:var(--s5);justify-items:start}
+.not-found h1{font-size:var(--fs-h1)}
+.prose-page .muted{max-width:68ch}

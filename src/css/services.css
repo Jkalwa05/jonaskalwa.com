@@ -1,0 +1,41 @@
+.services-head{padding-top:0}
+/* fester, hellgrauer Strich über der Überschrift: keine Animation */
+.section-rule{margin-bottom:var(--s8)}
+.services-head h2{margin-top:var(--s4)}
+.service-list{margin-top:var(--s9)}
+.service{display:grid;gap:var(--s6);padding-block:var(--s7);border-top:1px solid var(--hair)}
+.service:first-child{border-top:0;padding-top:var(--s7)}
+.service__body{display:grid;gap:var(--s4);align-content:center;justify-items:start}
+.service__body h3{margin-top:var(--s1)}
+.service__body .muted{max-width:52ch}
+.ziel{display:grid;gap:var(--s2);padding-top:var(--s4);border-top:1px solid var(--hair);width:100%;max-width:52ch;font-weight:500}
+.ziel .label{color:var(--ink-3)}
+/* Schema: Zeichnung mit Chips */
+.schema{margin:0;position:relative}
+.schema__art{position:relative;aspect-ratio:4/3;width:100%;max-width:560px}
+.schema svg{width:100%;height:100%;overflow:visible;fill:none;stroke:var(--accent);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.schema .draw--soft{stroke:var(--hair-2)}
+@media (min-width:960px){.service{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--s5);align-items:center}.service .schema{grid-column:1 / span 6}.service__body{grid-column:8 / span 5}}
+/* Leitende Achse: feine Linie mit einem Punkt pro Leistung; sie füllt sich beim Scrollen blau (nur in der Bühne) */
+.service__node{display:none}
+/* Bühne: breite und hohe Fenster mit JS. Reines CSS, damit das Layout schon vor dem ersten Scrollen feststeht. */
+@media (min-width:1100px) and (min-height:700px){
+  html.js .service-list{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--s5)}
+  html.js .service{display:contents}
+  html.js .schema{grid-column:1 / span 5;grid-row:1 / span 3;position:sticky;top:max(calc(var(--nav-h) + 24px),calc(50vh - 210px));align-self:start;opacity:0;visibility:hidden;transition:opacity var(--dur-2) var(--ease),visibility 0s linear var(--dur-2)}
+  html.js .schema.is-active{opacity:1;visibility:visible;transition:opacity var(--dur-2) var(--ease),visibility 0s}
+  html.js .service__body{grid-column:7 / span 6;padding-left:var(--s8);padding-top:10vh;align-content:start;min-height:60vh;border-top:0}
+  html.js .service__node{display:block;grid-column:6 / span 2;justify-self:center;align-self:stretch;position:relative;width:1px;background:var(--hair-2);z-index:1}
+  html.js .service__node::before{content:"";position:absolute;z-index:2;left:50%;top:calc(10vh + 3px);translate:-50% 0;width:13px;height:13px;border-radius:50%;background:var(--bg);border:1px solid var(--hair-2);transition:background-color .25s linear,border-color .25s linear}
+  html.js .service__node.is-passed::before{background:var(--accent);border-color:var(--accent)}
+  html.js .service__fill{position:absolute;inset:0;background:var(--accent);transform-origin:top;transform:scaleY(var(--p,0))}
+  html.js .service[data-service="2"] .service__node{align-self:start;height:calc(10vh + 9px)}
+  html.js .service[data-service="0"] .service__body,html.js .service[data-service="0"] .service__node{grid-row:1}
+  html.js .service[data-service="1"] .service__body,html.js .service[data-service="1"] .service__node{grid-row:2}
+  html.js .service[data-service="2"] .service__body,html.js .service[data-service="2"] .service__node{grid-row:3}
+}
+@media (prefers-reduced-motion:reduce){.schema,.schema.is-active{transition:none!important}}
+.service__body.is-current > .label:first-child{color:var(--accent-deep)}
+/* Zeichen-Zustand nur mit Bewegung und JS; sonst steht alles fertig da */
+html.motion .schema:not([data-drawn]) .draw{stroke-dasharray:1;stroke-dashoffset:1}
+html.motion .schema:not([data-drawn]) 

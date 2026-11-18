@@ -1,0 +1,54 @@
+
+perf dist/index.html @ 1440px
+  PASS  host CPU load (before/after)               23/22 %
+  PASS  total transfer                             263.5 KiB      html 6.9K  css 8.1K  js 9.5K  font 55.7K  img 176K  other 7.3K
+  PASS  requests                                   21             15 by load
+  PASS  images bytes                               176 KiB        8 files
+  PASS  largest image                              54.8 KiB       assets/ak-website-detail-960.webp
+  PASS  JS parsed                                  21.5 KiB       4 files, 9.5K gz
+  PASS  CSS                                        8.1 KiB        3 files
+  PASS  font families                              2              Switzer, Cabinet
+  PASS  font files                                 3              55.7K
+  PASS  font bytes                                 55.7 KiB
+  PASS  images without width+height                0
+  PASS  below-fold images not lazy                 0
+  PASS  oversized images (natural > 2.2x shown)    0
+  PASS  WebGL live at load                         0
+  PASS  WebGL live at bottom                       0
+  PASS  WebGL peak live                            0              0 contexts made in all
+  PASS  long tasks                                 0              runs 3, 0..0, max 0ms
+  PASS  blocking time                              0 ms           runs 3, 0..0 ms; at load 0ms
+  PASS  FCP (CPU, relative)                        44 ms          runs 3, 40..64
+  PASS  LCP (CPU, relative)                        44 ms          runs 3, 40..64, img
+  PASS  layout shift                               0.000          runs 3, 0.000..0.000; at load 0.000
+  PASS  modules loaded, never mounted              0
+  PASS  broken requests                            0
+  PASS  page height                                8.3 screens    DOM 442 nodes
+
+perf dist/index.html @ 390px
+  PASS  host CPU load (before/after)               23/22 %
+  PASS  total transfer                             157.5 KiB      html 6.9K  css 8.1K  js 9.5K  font 55.7K  img 70.3K  other 6.9K
+  PASS  requests                                   21             14 by load
+  PASS  images bytes                               70.3 KiB       9 files
+  PASS  largest image                              14.2 KiB       assets/ak-visitenkarten-foto-360.webp
+  PASS  JS parsed                                  21.5 KiB       4 files, 9.5K gz
+  PASS  CSS                                        8.1 KiB        3 files
+  PASS  font families                              2              Switzer, Cabinet
+  PASS  font files                                 3              55.7K
+  PASS  font bytes                                 55.7 KiB
+  PASS  images without width+height                0
+  WARN  below-fold images not lazy                 1              jonas-kalwa-84.webp
+  PASS  oversized images (natural > 2.2x shown)    0
+  PASS  WebGL live at load                         0
+  PASS  WebGL live at bottom                       0
+  PASS  WebGL peak live                            0              0 contexts made in all
+  PASS  long tasks                                 0              runs 3, 0..0, max 0ms
+  PASS  blocking time                              0 ms           runs 3, 0..0 ms; at load 0ms
+  PASS  FCP (CPU, relative)                        40 ms          runs 3, 40..48
+  PASS  LCP (CPU, relative)                        40 ms          runs 3, 40..48, img
+  PASS  layout shift                               0.000          runs 3, 0.000..0.000; at load 0.000
+  PASS  modules loaded, never mounted              0
+  PASS  broken requests                            0
+  PASS  page height                                9.4 screens    DOM 442 nodes
+
+SUMMARY dist/index.html: 0 FAIL, 1 WARN  -> WARN

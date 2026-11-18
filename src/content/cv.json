@@ -1,0 +1,38 @@
+{
+  "groups": [
+    {
+      "title": "Beruf & eigene Projekte",
+      "entries": [
+        { "period": "Seit November 2026", "title": "Gründer & Entwickler · Kalwa Software", "text": "Websites, individuelle Anwendungen und Automatisierungen. Eigenes Einzelunternehmen im Nebenerwerb." },
+        { "period": "Seit April 2026", "title": "Founder & Developer · objelis", "text": "Entwicklung einer KI-gestützten Plattform für Objekterkennung, Vermessung und Modellierung." },
+        { "period": "Seit Oktober 2025", "title": "Werkstudent Marketing & KI · Pöppelmann", "text": "Konzeption und Entwicklung interner KI- und Automatisierungslösungen, technische Umsetzung und Tests. Interne KI-Formate sowie Unterstützung bei Marketing und SEO." },
+        { "period": "Juni bis Oktober 2025", "title": "Marketing · Pöppelmann", "text": "Direkte Weiterbeschäftigung nach der Ausbildung. Operatives Marketing und erste KI- und Automatisierungsanwendungen." },
+        { "period": "August 2023 bis Juni 2025", "title": "Ausbildung zum Industriekaufmann · Pöppelmann", "text": "Auf zwei Jahre verkürzt, Abschlussnote 2,2." },
+        { "period": "August 2021 bis Juli 2022", "title": "Jahrespraktikum · AOK Niedersachsen", "text": "Einblicke in die Arbeit im Versicherungsbereich, Standort Lohne." }
+      ]
+    },
+    {
+      "title": "Studium & Bildung",
+      "entries": [
+        { "period": "Seit 2025", "title": "Universität Osnabrück", "text": "Studium, aktuell Wirtschaftsinformatik (B.Sc.). Zuvor Wirtschaftswissenschaften, Wechsel zur Wirtschaftsinformatik im Oktober 2026." },
+        { "period": "September 2026", "title": "IBM AI Developer", "text": "Zertifikat von IBM." },
+        { "period": "2021 bis 2023", "title": "Fachoberschule Wirtschaft · HLA Lohne", "text": "Fachhochschulreife." },
+        { "period": "2020 bis 2021", "title": "Geschwister-Scholl-Oberschule Vechta", "text": "Erweiterter Realschulabschluss." },
+        { "period": "2015 bis 2020", "title": "Gymnasium Antonianum Vechta", "text": "" }
+      ]
+    },
+    {
+      "title": "Hackathons & Praxis",
+      "entries": [
+        { "period": "München · 2026", "title": "Von 2D-Zeichnungen zu CAD", "text": "Gemeinsame Entwicklung einer Pipeline für die automatische Erzeugung von CAD-Modellen beim Hackathon von {Tech: Europe}." },
+        { "period": "Berlin · 2026", "title": "Sichtbarkeit in KI-Suchen", "text": "Teamprojekt beim Big Berlin Hack: Markensichtbarkeit in KI-Suchen untersuchen und Ansatzpunkte für Verbesserungen finden." },
+        { "period": "Hamburg · 2026", "title": "3D-Scanning für das Handwerk", "text": "Teamprojekt beim Cheftreff AI Hackathon: Videoaufnahmen als Grundlage für eine interaktive 3D-Szenenanalyse." },
+        { "period": "Vechta · 2026", "title": "Kampagnen-Orchestrierung", "text": "Als Unternehmensvertreter für Pöppelmann beim Hansaline Hackathon: eine Challenge zur Customer Journey begleiten." }
+      ]
+    }
+  ],
+  "extras": [
+    { "title": "Technische Schwerpunkte", "text": "Web- und Backend-Entwicklung, Python, React, Datenbanken, Schnittstellen, KI-Automatisierung, Computer Vision und 3D." },
+    { "title": "Sprachen & Interessen", "text": "Deutsch (Muttersprache), Englisch (fließend), Russisch (Grundkenntnisse). Abseits der Software: Sport, Basketball und Schlagzeug." }
+  ]
+}

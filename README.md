@@ -1,7 +1,14 @@
-# jonaskalwa.com
+# Kalwa Software, lokale Website
 
-Personal website of Jonas Kalwa.
+Objelis-Corporate-Design in Weiß und Blau für Kalwa Software. Details: `DESIGN.md`.
 
-**Live:** https://jonaskalwa-com.vercel.app
+```sh
+npm install
+npm run build   # Tokens, Seiten, CSS, JS nach dist/ und statische Prüfung
+npm run dev     # nur http://127.0.0.1:4173
+npm test        # Playwright-Prüfungen gegen einen lokalen Testserver (Port 4181)
+```
 
-Static HTML/CSS, deployed on Vercel.
+Der Testbrowser kommt aus dem Playwright-Cache; bei Bedarf `CHROME_PATH` auf eine Chromium-Binärdatei setzen.
+
+Alle Arbeiten bleiben unter diesem Ordner. Keine Veröffentlichung ohne ausdrückliche Freigabe.

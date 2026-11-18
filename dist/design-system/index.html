@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Design-System | Kalwa Software</title>
+<meta name="description" content="Interne Komponentenreferenz.">
+<meta name="theme-color" content="#ffffff">
+<meta name="robots" content="noindex,nofollow">
+
+<script>(function(d){var c=d.documentElement;c.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){c.classList.add('motion');window.__motionGuard=setTimeout(function(){c.classList.remove('motion')},4000)}})(document)</script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/cabinet-grotesk-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/switzer-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/switzer-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/switzer-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/tokens.css">
+<link rel="stylesheet" href="/styles.css">
+<script type="module" src="/app.js"></script>
+</head>
+<body id="top">
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+<header class="site-header" data-on="light">
+  <div class="header-bar">
+    <a class="brand" href="/" aria-label="Kalwa Software, Startseite"><img class="brand-symbol" src="/assets/kalwa-monogram.svg" width="64" height="64" alt=""><span class="brand-name">kalwa software</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Menü öffnen"><span></span><span></span></button>
+    <nav id="navigation" class="main-nav" aria-label="Hauptnavigation">
+      <a href="/#leistungen">Leistungen</a><a href="/#praxis">Projekte</a><a href="/#ueber-mich">Über mich</a><a href="/lebenslauf/">Lebenslauf</a>
+      <a class="button button--small" href="/#kontakt">Projekt besprechen <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+<div class="wrap ds">
+  <p class="label">Intern · nicht öffentlich verlinkt</p>
+  <h1>Design-System</h1>
+  <p class="lead">Objelis in Weiß und Blau: ein Theme, ein Blau, Haarlinien statt Karten.</p>
+  <section aria-labelledby="ds-farben"><h2 id="ds-farben">Farben</h2><ul class="ds-swatches">
+    <li class="ds-swatch"><span class="ds-chip" style="background:#FFFFFF" aria-hidden="true"></span><span><strong>Grund</strong><br><span class="label">#FFFFFF · --bg</span></span></li><li class="ds-swatch"><span class="ds-chip" style="background:#101214" aria-hidden="true"></span><span><strong>Schrift</strong><br><span class="label">#101214 · --ink</span></span></li><li class="ds-swatch"><span class="ds-chip" style="background:#505760" aria-hidden="true"></span><span><strong>Zweitschrift</strong><br><span class="label">#505760 · --ink-2</span></span></li><li class="ds-swatch"><span class="ds-chip" style="background:#5D6670" aria-hidden="true"></span><span><strong>Drittschrift</strong><br><span class="label">#5D6670 · --ink-3</span></span></li><li class="ds-swatch"><span class="ds-chip" style="background:#2857EB" aria-hidden="true"></span><span><strong>Akzent Blau</strong><br><span class="label">#2857EB · --accent</span></span></li><li class="ds-swatch"><span class="ds-chip" style="background:#1A3CB4" aria-hidden="true"></span><span><strong>Akzent tief</strong><br><span class="label">#1A3CB4 · --accent-deep</span></span></li><li class="ds-swatch"><span class="ds-chip" style="background:#EDF1FB" aria-hidden="true"></span><span><strong>Fläche helles Blau</strong><br><span class="label">#EDF1FB · --ground-wash</span></span></li><li class="ds-swatch"><span class="ds-chip" style="background:#0B1020" aria-hidden="true"></span><span><strong>Fläche Nachtblau</strong><br><span class="label">#0B1020 · --ground-night</span></span></li>
+  </ul></section>
+  <section aria-labelledby="ds-schrift"><h2 id="ds-schrift">Typografie</h2>
+    <p class="ds-display">Cabinet Grotesk 800: Software, die für dich arbeitet.</p>
+    <p class="lead">Switzer: Ich entwickle Websites, individuelle Anwendungen und Automatisierungen.</p>
+    <p class="label">Eyebrow: Switzer 600, Satzschreibung</p>
+  </section>
+  <section aria-labelledby="ds-buttons"><h2 id="ds-buttons">Buttons</h2><div class="ds-row"><a class="button" href="#ds-buttons">Primär <span aria-hidden="true">↗</span></a><a class="button button--ghost" href="#ds-buttons">Sekundär</a><a class="button button--small" href="#ds-buttons">Klein</a><a class="text-link" href="#ds-buttons">Textlink <span aria-hidden="true">↗</span></a></div></section>
+  <section aria-labelledby="ds-flaechen"><h2 id="ds-flaechen">Flächen</h2><div class="ds-themes">
+    <div class="theme-blue ds-theme"><p class="label">Blau</p><p class="lead">Hero und Kontakt</p><a class="button" href="#ds-flaechen">Button</a></div>
+    <div class="theme-wash ds-theme"><p class="label">Helles Blau</p><p class="lead">Praxis</p><a class="button" href="#ds-flaechen">Button</a></div>
+    <div class="theme-night ds-theme"><p class="label">Nachtblau</p><p class="lead">objelis und Fuß</p><a class="button" href="#ds-flaechen">Button</a></div>
+  </div></section>
+  <section aria-labelledby="ds-wuerfel"><h2 id="ds-wuerfel">Würfel</h2><p class="muted">Offen, passiert, aktiv.</p>
+    <div class="ds-row ds-cubes"><span class="cube" aria-hidden="true"></span><span class="cube is-passed" aria-hidden="true"></span><span class="cube is-active" aria-hidden="true"></span></div></section>
+</div>
+</main>
+<footer class="site-footer theme-night" data-theme="night">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="Kalwa Software, Startseite"><img class="brand-symbol" src="/assets/kalwa-monogram.svg" width="64" height="64" alt=""><span class="brand-name">kalwa software</span></a>
+        <p class="footer-tagline">Websites, individuelle Software und Automatisierungen.</p>
+        <a class="text-link" href="mailto:kalwajonas@gmail.com">kalwajonas@gmail.com</a>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h2 class="label">Leistungen</h2><ul><li><a href="/#leistungen">Websites &amp; Sichtbarkeit</a></li><li><a href="/#leistungen">Individuelle Software</a></li><li><a href="/#leistungen">Automatisierungen &amp; KI</a></li></ul></div>
+        <div class="footer-col"><h2 class="label">Projekte</h2><ul><li><a href="/#praxis">AK rund ums Haus</a></li><li><a href="/#objelis">objelis</a></li></ul></div>
+        <div class="footer-col"><h2 class="label">Über mich</h2><ul><li><a href="/#ueber-mich">Jonas Kalwa</a></li><li><a href="/lebenslauf/">Lebenslauf</a></li><li><a href="https://www.linkedin.com/in/jonas-kalwa/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (öffnet in neuem Tab)</span></a></li><li><a href="https://github.com/Jkalwa05" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (öffnet in neuem Tab)</span></a></li></ul></div>
+        <div class="footer-col"><h2 class="label">Rechtliches</h2><ul><li><a href="/impressum/">Impressum</a></li><li><a href="/datenschutz/">Datenschutz</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Jonas Kalwa · Kalwa Software</span>
+      <span>Vechta / Osnabrück</span>
+      <a href="#top">Nach oben <span aria-hidden="true">↑</span></a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

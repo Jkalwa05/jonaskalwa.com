@@ -1,0 +1,31 @@
+/* Hero: blaue Fläche, große Headline, angeschnittene Gerätebühne mit echten Projekt-Screenshots */
+.hero{position:relative;overflow:hidden;margin-top:calc(var(--nav-h) * -1);padding-top:calc(var(--nav-h) + var(--s6));display:flex;flex-direction:column;min-height:min(100svh,980px)}
+.hero-grid{position:relative;z-index:2;width:100%}
+.hero-copy{display:grid;gap:var(--s5);justify-items:start;align-content:start;max-width:min(40vw,580px)}
+@media (max-width:959px){.hero-copy{max-width:640px}}
+.hero-copy h1{font-size:var(--fs-hero);margin-block:var(--s2)}
+.hero-copy .lead{color:var(--ink-2)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s3)}
+.hero-stage{position:relative;z-index:1;margin-top:var(--s7);margin-bottom:-14vw;flex:1}
+.hero-devices{position:relative;width:118%;margin-left:auto;margin-right:-14%}
+/* Geräterahmen */
+.device{margin:0;background:#06080f;border:1px solid rgba(255,255,255,.2);will-change:transform}
+.device img{display:block;width:100%;height:auto}
+.device--laptop{--r:clamp(14px,1.6vw,24px);--bz:clamp(7px,.9vw,14px);padding:var(--bz);border-radius:var(--r)}
+.device--laptop img{border-radius:calc(var(--r) - var(--bz) + 2px)}
+.device--phone{--r:clamp(24px,3.4vw,52px);--bz:clamp(5px,.75vw,11px);position:absolute;left:-2%;bottom:-5%;width:25%;padding:var(--bz);border-radius:var(--r)}
+.device--phone img{border-radius:calc(var(--r) - var(--bz) + 2px)}
+.device--phone::before{content:"";position:absolute;z-index:1;top:calc(var(--bz) + 2.2%);left:50%;width:30%;height:1.9%;translate:-50% 0;background:#06080f;border-radius:99px}
+@media (min-width:960px){
+  .hero{padding-top:calc(var(--nav-h) + var(--s7))}
+  .hero-stage{position:absolute;inset:0;margin:0;flex:none;pointer-events:none}
+  .hero-devices{position:absolute;right:-7vw;bottom:-4vh;width:min(60vw,1060px);margin:0}
+  .device--phone{left:-15%;bottom:-9%;width:22%}
+}
+/* Mobil: nur das Smartphone, mittig und groß, unten angeschnitten */
+@media (max-width:959px){
+  .hero-stage{margin-bottom:-26vw}
+  .hero-devices{width:100%;margin:0;display:flex;justify-content:center}
+  .device--laptop{display:none}
+  .device--phone{position:relative;left:auto;bottom:auto;width:min(62%,280px)}
+}

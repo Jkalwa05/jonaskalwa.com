@@ -1,0 +1,77 @@
+/* Generated from brand/tokens.json. Edit the source, then npm run build. */
+@font-face{font-family:'Cabinet Grotesk';src:url('/assets/fonts/cabinet-grotesk-800-normal.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:Switzer;src:url('/assets/fonts/switzer-400-normal.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Switzer;src:url('/assets/fonts/switzer-500-normal.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:Switzer;src:url('/assets/fonts/switzer-600-normal.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:Switzer;src:url('/assets/fonts/switzer-700-normal.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:Tabular;src:url('/assets/fonts/tabular-400-normal.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Tabular;src:url('/assets/fonts/tabular-500-normal.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+
+:root{
+ color-scheme:light;
+ --primitive-color-white:#ffffff;
+ --primitive-color-wash:#edf1fb;
+ --primitive-color-night:#0b1020;
+ --primitive-color-accent-night:#8caaff;
+ --primitive-color-ink:#101214;
+ --primitive-color-blue:#2857eb;
+ --primitive-color-blue-deep:#1a3cb4;
+ --primitive-color-muted:#505760;
+ --primitive-color-quiet:#5d6670;
+ --primitive-color-success:#236540;
+ --primitive-color-warning:#805900;
+ --primitive-color-error:#a82132;
+ --bg:var(--primitive-color-white);
+ --ink:var(--primitive-color-ink);
+ --ink-2:var(--primitive-color-muted);
+ --ink-3:var(--primitive-color-quiet);
+ --hair:rgba(16,18,20,.12);
+ --hair-2:rgba(16,18,20,.22);
+ --accent:var(--primitive-color-blue);
+ --accent-deep:var(--primitive-color-blue-deep);
+ --ground-wash:var(--primitive-color-wash);
+ --ground-blue:var(--primitive-color-blue);
+ --ground-night:var(--primitive-color-night);
+ --accent-night:var(--primitive-color-accent-night);
+ --focus:var(--accent);
+ --success:var(--primitive-color-success);
+ --warn:var(--primitive-color-warning);
+ --error:var(--primitive-color-error);
+ --display:'Cabinet Grotesk',Switzer,system-ui,sans-serif;
+ --text:Switzer,system-ui,sans-serif;
+ --mono:Tabular,ui-monospace,monospace;
+ --s1:4px;
+ --s2:8px;
+ --s3:12px;
+ --s4:16px;
+ --s5:24px;
+ --s6:32px;
+ --s7:48px;
+ --s8:64px;
+ --s9:96px;
+ --s10:128px;
+ --s11:192px;
+ --edge:clamp(20px,3.34vw,48px);
+ --nav-h:72px;
+ --sec:clamp(72px,9vw,160px);
+ --fs-hero:clamp(44px,6.2vw,104px);
+ --fs-h1:clamp(40px,5.4vw,84px);
+ --fs-h2:clamp(34px,4.2vw,68px);
+ --fs-h3:clamp(24px,2.5vw,40px);
+ --fs-lead:clamp(18px,1.45vw,22px);
+ --fs-text:clamp(17px,1.2vw,19px);
+ --fs-ui:16px;
+ --fs-label:12px;
+ --track-display:-.024em;
+ --lh-display:.98;
+ --ease:cubic-bezier(.2,.7,.2,1);
+ --dur-1:200ms;
+ --dur-2:400ms;
+ --dur-3:800ms;
+ --radius-s:8px;
+ --radius:20px;
+ --cube:10px;
+ --cube-active:14px;
+ --cube-radius:3px;
+ --gutter-cubes:72px;
+}
