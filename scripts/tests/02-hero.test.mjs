@@ -37,20 +37,21 @@ test('Hero: keine Maße, Maßlinien oder Chips', async () => {
   });
 });
 
-test('Hero: blaue Fläche, der Kopf liegt zuerst unsichtbar darüber und wird beim Scrollen zur Pille', async () => {
+test('Hero: weißer Grund mit blauer Bühne hinter den Geräten, der Kopf liegt zuerst unsichtbar darüber und wird beim Scrollen zur Pille', async () => {
   await withSite(async ({ origin, newPage }) => {
     const page = await newPage();
     await page.goto(origin + '/', { waitUntil: 'networkidle' });
-    assert.equal(await page.locator('#start').evaluate(e => getComputedStyle(e).backgroundColor), 'rgb(40, 87, 235)');
+    assert.equal(await page.locator('#start').evaluate(e => getComputedStyle(e).backgroundColor), 'rgb(255, 255, 255)');
+    assert.equal(await page.locator('#start .hero-stage').evaluate(e => getComputedStyle(e, '::before').backgroundColor), 'rgb(40, 87, 235)');
     const bar = () => page.locator('.header-bar').evaluate(e => { const s = getComputedStyle(e); return { bg: s.backgroundColor, r: parseFloat(s.borderTopLeftRadius) }; });
     assert.equal((await bar()).bg, 'rgba(0, 0, 0, 0)');
     const line0 = await page.locator('.header-bar').evaluate(e => getComputedStyle(e).borderTopColor);
-    assert.match(line0, /^rgba\(255, 255, 255, 0\.[3-9]/, 'weiße Umrandung der Pille von Anfang an: ' + line0);
-    assert.equal(await page.locator('.site-header .brand-name').evaluate(e => getComputedStyle(e).color), 'rgb(255, 255, 255)');
+    assert.match(line0, /^rgba\(16, 18, 20, 0\.[1-3]/, 'dunkle Haarlinie der Pille von Anfang an: ' + line0);
+    assert.equal(await page.locator('.site-header .brand-name').evaluate(e => getComputedStyle(e).color), 'rgb(16, 18, 20)');
     await page.evaluate(() => scrollTo({ top: 300, behavior: 'instant' }));
     await page.waitForTimeout(700);
     const b = await bar();
-    assert.equal(b.bg, 'rgb(40, 87, 235)');
+    assert.equal(b.bg, 'rgb(255, 255, 255)');
     assert.ok(b.r >= 30, 'abgerundet: ' + b.r);
   });
 });

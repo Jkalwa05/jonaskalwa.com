@@ -10,9 +10,10 @@ test('Look: jeder Abschnitt trägt seine Farbfläche, benachbarte Flächen unter
     await page.goto(origin + '/', { waitUntil: 'networkidle' });
     const rows = await page.evaluate(() => [...document.querySelectorAll('[data-section]')].map(s => ({ id: s.id, bg: getComputedStyle(s).backgroundColor })).concat([{ id: 'footer', bg: getComputedStyle(document.querySelector('.site-footer')).backgroundColor }]));
     assert.deepEqual(rows.map(r => [r.id, r.bg]), [
-      ['start', BG.blue], ['leistungen', BG.white], ['praxis', BG.wash], ['objelis', BG.night], ['ueber-mich', BG.white], ['kontakt', BG.blue], ['footer', BG.night],
+      ['start', BG.white], ['leistungen', BG.white], ['praxis', BG.wash], ['objelis', BG.night], ['ueber-mich', BG.white], ['kontakt', BG.blue], ['footer', BG.night],
     ]);
-    for (let i = 1; i < rows.length; i++) assert.notEqual(rows[i].bg, rows[i - 1].bg, `${rows[i - 1].id} / ${rows[i].id}`);
+    // Hero und Leistungen sind beide weiß; sie trennt der feste graue Strich.
+    for (let i = 2; i < rows.length; i++) assert.notEqual(rows[i].bg, rows[i - 1].bg, `${rows[i - 1].id} / ${rows[i].id}`);
   });
 });
 
@@ -86,14 +87,14 @@ test('Look: keine Mono-Schrift, keine Versalien-Labels, keine Maß-Chips irgendw
   });
 });
 
-test('Look: Kontakt und Hero tragen weiße Primärbuttons auf Blau, Texte bleiben lesbar (axe)', async () => {
+test('Look: Kontakt trägt weiße Primärbuttons auf Blau, der Hero dunkle auf Weiß, Texte bleiben lesbar (axe)', async () => {
   await withSite(async ({ origin, newPage, axe }) => {
     const page = await newPage();
     await page.goto(origin + '/', { waitUntil: 'networkidle' });
     await page.waitForFunction(() => window.__heroDoneAt);
-    for (const sel of ['#start .button:not(.button--ghost)', '#kontakt .button:not(.button--ghost)']) {
+    for (const [sel, want] of [['#start .button:not(.button--ghost)', ['rgb(16, 18, 20)', BG.white]], ['#kontakt .button:not(.button--ghost)', [BG.white, BG.blue]]]) {
       const c = await page.locator(sel).first().evaluate(e => [getComputedStyle(e).backgroundColor, getComputedStyle(e).color]);
-      assert.deepEqual(c, [BG.white, BG.blue], sel);
+      assert.deepEqual(c, want, sel);
     }
     assert.deepEqual((await axe(page)).map(v => v.id + ': ' + v.nodes.map(n => n.target).join(' ')), []);
   });

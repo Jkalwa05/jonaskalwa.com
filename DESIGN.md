@@ -9,7 +9,7 @@ Die Website übernimmt das Corporate Design von objelis (Cabinet Grotesk, Switze
 - `npm run dev` liefert ausschließlich auf `127.0.0.1:4173`. `npm test` führt alle Prüfungen in `scripts/tests/` aus.
 
 ## Look
-- Flächen: Hero Blau `#2857EB`, Leistungen Weiß, Praxis helles Blau `#EDF1FB`, objelis Nachtblau `#0B1020`, Über mich Weiß, Kontakt Blau, Fuß Nachtblau. Jeder Abschnitt trägt eine Theme-Klasse (`theme-*` in `css/themes.css`), die `--bg`, `--ink`, `--hair`, `--accent` lokal überschreibt.
+- Flächen: Hero Weiß mit blauer Bühne (`#2857EB`) hinter den Geräten, Leistungen Weiß, Praxis helles Blau `#EDF1FB`, objelis Nachtblau `#0B1020`, Über mich Weiß, Kontakt Blau, Fuß Nachtblau. Jeder Abschnitt trägt eine Theme-Klasse (`theme-*` in `css/themes.css`), die `--bg`, `--ink`, `--hair`, `--accent` lokal überschreibt.
 - Schrift: Cabinet Grotesk 800 (Headlines), Switzer (Text und Eyebrows in Satzschreibung). Keine Mono-Schrift, keine Versalien-Labels, keine Maße, keine Chips.
 - Bausteine: Pill-Buttons (primär gefüllt, sekundär Outline), Textlink mit durchlaufender Unterstreichung, Haarlinien nur in Listen.
 - Hero: große angeschnittene Gerätebühne (Laptop mit dem Foto-Ausschnitt der AK-Website, Smartphone, Rahmen in CSS). Mobil nur das Smartphone. Die Würfel über dem weißen Bild werden blau.

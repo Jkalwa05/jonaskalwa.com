@@ -1,4 +1,4 @@
-/* Hero: blaue Fläche, große Headline, angeschnittene Gerätebühne mit echten Projekt-Screenshots */
+/* Hero: weißer Grund, blaue Bühne nur hinter den Geräten, große Headline, angeschnittene Gerätebühne mit echten Projekt-Screenshots */
 .hero{position:relative;overflow:hidden;margin-top:calc(var(--nav-h) * -1);padding-top:calc(var(--nav-h) + var(--s6));display:flex;flex-direction:column;min-height:min(100svh,980px)}
 .hero-grid{position:relative;z-index:2;width:100%}
 .hero-copy{display:grid;gap:var(--s5);justify-items:start;align-content:start;max-width:min(40vw,580px)}
@@ -7,6 +7,8 @@
 .hero-copy .lead{color:var(--ink-2)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s3)}
 .hero-stage{position:relative;z-index:1;margin-top:var(--s7);margin-bottom:-14vw;flex:1}
+.hero-stage::before{content:"";position:absolute;z-index:0;inset:0;background:var(--ground-blue);border-radius:clamp(24px,3vw,48px)}
+.hero-devices{z-index:1}
 .hero-devices{position:relative;width:118%;margin-left:auto;margin-right:-14%}
 /* Geräterahmen */
 .device{margin:0;background:#06080f;border:1px solid rgba(255,255,255,.2);will-change:transform}
@@ -19,12 +21,14 @@
 @media (min-width:960px){
   .hero{padding-top:calc(var(--nav-h) + var(--s7))}
   .hero-stage{position:absolute;inset:0;margin:0;flex:none;pointer-events:none}
+  .hero-stage::before{inset:auto;top:calc(var(--nav-h) + var(--s5));right:0;bottom:0;left:calc(100% + 7vw - min(60vw,1060px) * 1.08);border-radius:clamp(28px,3.2vw,56px) 0 0 0}
   .hero-devices{position:absolute;right:-7vw;bottom:-4vh;width:min(60vw,1060px);margin:0}
   .device--phone{left:-15%;bottom:-9%;width:22%}
 }
 /* Mobil: nur das Smartphone, mittig und groß, unten angeschnitten */
 @media (max-width:959px){
-  .hero-stage{margin-bottom:-26vw}
+  .hero-stage{margin-bottom:-26vw;padding-top:var(--s5)}
+  .hero-stage::before{inset:0 var(--edge) 0;border-radius:var(--r-panel,32px) var(--r-panel,32px) 0 0}
   .hero-devices{width:100%;margin:0;display:flex;justify-content:center}
   .device--laptop{display:none}
   .device--phone{position:relative;left:auto;bottom:auto;width:min(62%,280px)}

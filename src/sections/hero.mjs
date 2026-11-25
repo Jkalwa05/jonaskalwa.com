@@ -3,7 +3,7 @@ import { esc, img, arrow, mailto } from '../lib-html.mjs';
 export default function hero(site) {
   const laptop = site.assets.akDetail;
   const phone = site.assets.akMobile;
-  return `<section id="start" class="hero theme-blue" data-section data-label="Start" data-theme="blue" aria-labelledby="hero-title">
+  return `<section id="start" class="hero theme-light" data-section data-label="Start" data-theme="light" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <h1 id="hero-title" data-hero="mask">Software, die<br>für dich<br>arbeitet.</h1>
